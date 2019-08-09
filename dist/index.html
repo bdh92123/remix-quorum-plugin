@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+  <title>Quorum Deploy Contract</title>
+</head>
+
+<body>
+  <article>
+    <label for="provider" id="header-label" class="text-dark">
+        Because of remix ide issue, plugin can't get remix web3 environment which already set in Deploy & Run tab.
+    </label>
+    <div class="settings form-group">
+        <div class="crow">
+            <div id="selectExEnv" class="col1_1"> Quorum URL </div>
+            <input class="form-control" type="text" id="provider" placeholder="http://localhost:22000" value="http://localhost:22000"/>
+            <button class="btn btn-medium btn-secondary" onclick="connectProvider()">Connect</button>
+        </div>
+        <div class="crow">
+            <div class="col1_1"> </div>
+            <div class="environment"><span class="network badge badge-secondary" id="currentProvider"></span></div>
+        </div>
+        <div class="crow">
+            <div class="col1_1"> Account </div>
+            <div class="account">
+                <select name="txorigin" id="txorigin" class="form-control select">
+                    
+                </select><i title="Copy value to clipboard" aria-hidden="true" class="icon copyIcon far fa-clipboard"></i><i id="remixRunSignMsg" aria-hidden="true" title="Sign a message using this account key" class="fas fa-edit icon"></i></div>
+        </div>
+        <div class="crow">
+            <div class="col1_1">Gas limit</div>
+            <input type="number" id="gasLimit" value="3000000" class="form-control gasNval col2">
+        </div>
+        <div class="crow">
+            <div class="col1_1">Value</div>
+            <div class="gasValueContainer">
+                <input type="text" id="value" value="0" title="Enter the value and choose the unit" class="form-control gasNval col2">
+                <select name="unit" id="unit" class="form-control p-1 gasNvalUnit col2_2">
+                    <option data-unit="wei">wei</option>
+                    <option data-unit="gwei">gwei</option>
+                    <option data-unit="finney">finney</option>
+                    <option data-unit="ether">ether</option>
+                </select>
+            </div>
+        </div>
+        <div class="crow">
+            <div class="col1_1">Private For</div>
+            <input type="text" id="privateFor" value="" placeholder="pub1,pub2.. (no quote)" class="form-control col2">
+        </div>
+        
+    </div>
+
+    <div class="col1_1">Contract Name</div>
+    <select class="form-control combobox input-large col2" id="contracts"></select>
+    <span class="text-dark">Newly compiled contract will appear here.</span>
+
+    <hr/>
+
+
+    <div class="cardContainer p-2 list-group-item">
+        <div class="cardHeader">
+            <div class="p-1 cardTitles">
+                <div class="cardTitle">Deploy</div>
+            </div>
+        </div>
+        <div class="cardBody">
+            <div class="contractProperty hasArgs" style="display: flex;">
+              <div class="contractActionsContainerMulti" style="display: flex;">
+                <div class="contractActionsContainerMultiInner text-dark">
+                  <div class="multiHeader">
+                    <div class="multiTitle">Constructor Arguments</div>
+                  </div>
+                  <form id="formDeployArgs">
+                    <div id="multiBody">
+                      
+                    </div>
+                  </form>
+                  <div class="group multiArg">
+                    <button class="instanceButton btn-warning" onclick="deployContract()">Deploy</button>
+
+                  </div>
+                  <div id="deployWarning" class="form-control-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="crow">
+              <label class="col1_1" for="contractAddress">At Address</label>
+              <div style="display: flex">
+                <input class="form-control" type="text" id="contractAddress" placeholder="i.e. 0x11b79afc03baf25c631dd70169bb6a3160b2706e" />
+                <button class="btn btn-medium btn-secondary" onclick="atAddress()">Load</button>
+              </div>
+            </div>
+            <div id="deployMessage" class="text-dark" style="word-break: break-all"></div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="instanceContainer">
+    </div>
+
+    <div id='results'></div>
+  </article>
+  <div id="tooltip"></div>
+<script type="text/javascript" src="index.js?d59ae2a68e09439e0a9c"></script></body>
+
+</html>
