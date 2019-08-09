@@ -39,9 +39,13 @@ And not support:
 ### Installation
 
 1. Clone repository
+
 2. Enter into directory using command line
-3. `npm install `
-4. `npm run build` (only first use)
+
+3. `npm install` 
+
+4. (if you changes code and want to rebuild, `npm run build`)
+
 5. `npm run start`
 
 6. In Remix IDE plugin manager, click "Connect to a Local Plugin" 
