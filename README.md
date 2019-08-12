@@ -64,9 +64,43 @@ And not support:
 
 Basically, usage is same with original deploy & transaction tab in remix ide. 
 
+
+
+**Load Plugin**
+
+![load](img/load.gif)
+
+
+
+**Compile Contract**
+
+![compile](img/compile.gif)
+
+
+
+**Deploy & Send Transaction**
+
+![send](img/send.gif)
+
+
+
+**Load Contract At Address**
+
+![at](img/at.gif)
+
+
+
+**Support Tuple (ABIEncoderV2)**
+
+![tuple](img/tuple.gif)
+
+
+
+**Support PrivateFor Parameter**
+
 Input the privateFor field to publish only to specific nodes before deploy or send transaction. This field only used when deploying contract or sending transactions (orange buttons). To input multiple values in privateFor field, just input public keys separated by commas.
 
 If other node which can't see contract try to call or send transaction, gas error will occured. 
 
-
+![private](img/private.gif)
 
